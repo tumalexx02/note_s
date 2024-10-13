@@ -1,0 +1,51 @@
+<aside
+  class="sidebar"
+  [style.width.px]="sidebarWidth()"
+  [style.min-width.px]="minWidth"
+  [style.max-width.px]="maxWidth"
+>
+  <div class="sidebar-heading">
+    <h4 class="h6">Ваши заметки</h4>
+    <button
+      class="search-btn"
+      (click)="toggleSearch()"
+    >
+      @if (isShowSearch()) {
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-search-btn"><path d="M280-80q-83 0-141.5-58.5T80-280q0-83 58.5-141.5T280-480q83 0 141.5 58.5T480-280q0 83-58.5 141.5T280-80Zm544-40L568-376q-12-13-25.5-26.5T516-428q38-24 61-64t23-88q0-75-52.5-127.5T420-760q-75 0-127.5 52.5T240-580q0 6 .5 11.5T242-557q-18 2-39.5 8T164-535q-2-11-3-22t-1-23q0-109 75.5-184.5T420-840q109 0 184.5 75.5T680-580q0 43-13.5 81.5T629-428l251 252-56 56Zm-615-61 71-71 70 71 29-28-71-71 71-71-28-28-71 71-71-71-28 28 71 71-71 71 28 28Z"/></svg>
+      } @else {
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-search-btn"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+      }
+    </button>
+  </div>
+
+  @if (isShowSearch()) {
+    <div class="sidebar-search-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="svg-search"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+      <input #search placeholder="Название заметки..." autofocus class="input" />
+    </div>
+  }
+
+  <app-sidebar-list></app-sidebar-list>
+
+  <div class="sidebar-buttons-wrapper">
+    <button
+      class="btn btn-primary new-note-btn"
+    >
+      <svg class="new-note-btn-svg" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h360v80H200v560h560v-360h80v360q0 33-23.5 56.5T760-120H200Zm120-160v-80h320v80H320Zm0-120v-80h320v80H320Zm0-120v-80h320v80H320Zm360-80v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/></svg>
+      Новая заметка
+    </button>
+  </div>
+
+</aside>
+<div
+  class="sidebar-width-swiper"
+  [ngClass]="{'active': isDragging()}"
+  (mousedown)="changeDraggable($event, true)"
+  (mouseup)="changeDraggable($event, false)"
+  (mouseleave)="changeDraggable($event, false)"
+  (mousemove)="changeSidebarWidth($event)"
+>
+  <div
+    class="sidebar-width-swiper__arm"
+  ></div>
+</div>

@@ -1,0 +1,19 @@
+<header class="layout-header">
+  <div class="layout-logo">
+    <span>замет_ки</span>
+  </div>
+
+  <button
+    class="btn btn-primary toggle-btn"
+    (click)="themeService.toggleTheme()"
+  >
+    {{ themeService.getToggleButtonText() }}
+  </button>
+</header>
+
+<div class="layout-content">
+  <app-sidebar></app-sidebar>
+  <div class="layout-main">
+    123
+  </div>
+</div>

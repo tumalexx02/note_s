@@ -1,0 +1,122 @@
+:host {
+  display: block;
+  background-color: var(--second-bg-color);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+  border-right: 1px solid var(--devider-color);
+}
+
+.sidebar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--devider-color);
+  box-shadow: 0 0 8px var(--shadow-color);
+}
+
+.sidebar-buttons-wrapper {
+  box-shadow: 0 0 8px var(--shadow-color);
+  padding: 12px 16px;
+}
+
+.new-note-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  color: var(--text-color);
+  width: 100%;
+}
+
+.new-note-btn-svg {
+  fill: var(--text-color);
+}
+
+.search-btn {
+  display: flex;
+  padding: 6px;
+  border-radius: 4px;
+  background: none;
+  border: 1px solid var(--devider-color);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--hover-bg-color);
+    .svg-search-btn {
+      fill: var(--text-color);
+    }
+  }
+  &:active {
+    background-color: var(--active-bg-color);
+  }
+}
+
+.svg-search-btn {
+  fill: var(--placeholder-text-color);
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-search-wrapper {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid var(--devider-color);
+  .input {
+    padding: 0;
+    width: 100%;
+    &::placeholder {
+      color: var(--placeholder-text-color);
+    }
+  }
+  .svg-search {
+    fill: var(--placeholder-text-color);
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.sidebar-width-swiper {
+  padding: 5px;
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  cursor: col-resize;
+  &__arm {
+    width: 4px;
+    height: 40px;
+    background-color: var(--background-color);
+    border: 1px solid var(--devider-color);
+    border-radius: 3px;
+    transition: width 0.1s, height 0.2s;
+  }
+  &:hover {
+    right: -8px;
+    .sidebar-width-swiper__arm {
+      width: 6px;
+      height: 60px;
+      background-color: var(--devider-color);
+    }
+  }
+  &.active {
+    padding: 160px;
+    right: -163px;
+    .sidebar-width-swiper__arm {
+      width: 6px;
+      height: 60px;
+      background-color: var(--placeholder-text-color);
+    }
+  }
+}

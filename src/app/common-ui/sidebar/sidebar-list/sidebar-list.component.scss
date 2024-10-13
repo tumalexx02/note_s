@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  border-bottom: 1px solid var(--devider-color);
+  scrollbar-color: var(--primary-color) var(--background-color);
+}
