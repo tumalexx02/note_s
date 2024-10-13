@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import './style/theme';
+@import './style/reset';
+@import './style/btn';
+@import './style/input';
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}

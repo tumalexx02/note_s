@@ -1,0 +1,10 @@
+.input {
+  font-size: 14px;
+  line-height: 20px;
+  background-color: var(--second-bg-color);
+  border: none;
+  color: var(--text-color);
+  &:focus {
+    outline: none;
+  }
+}

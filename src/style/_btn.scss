@@ -1,0 +1,25 @@
+.btn {
+  padding: 12px 18px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--text-color);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  border: none;
+  &:hover {
+    background-color: var(--hover-primary-color);
+  }
+  &:active {
+    background-color: var(--active-primary-color);
+  }
+}
